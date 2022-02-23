@@ -38,7 +38,7 @@ body {
     font-size: 60px;
 }
 #clutch {
-    z-index: -10;
+    /* z-index: -10; */
 }
 .item > p {
     height: 100%;

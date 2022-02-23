@@ -9,7 +9,7 @@ var a
 var isWord
 var ans
 var b
-var correct
+var correct = false
 clutch.focus()
 getAns()
 console.log(ans)
@@ -29,9 +29,16 @@ function relCheck() {
     realWord()
     if(isWord) {
         setColors()
+        
     }
     else {
         goBack()
+    }
+}
+function isCorrect() {
+    if((document.getElementById(`${activeRow}1`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}2`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}3`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}4`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}5`).style.backgroundColor == "green")) {
+        correct = true
+        clutch.blur()
     }
 }
 function setColors() {
@@ -42,6 +49,9 @@ function setColors() {
             }
             else if(ansSplit[a] == inputted[b].toLowerCase()) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "yellow"
+            }
+            else if((document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "yellow") && (document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "green")) {
+                document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "gray"
             }
         }
     }
@@ -67,7 +77,9 @@ function goBack() {
     activeRow--
 }
 document.addEventListener("click", function(e) {
-    clutch.focus()
+    if(correct == false) {
+        clutch.focus()
+    }
 })
 clutch.addEventListener("keydown", function(a) {
     if((65 <= a.keyCode) && (90 >= a.keyCode)) {
