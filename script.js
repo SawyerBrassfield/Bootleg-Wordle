@@ -29,16 +29,20 @@ function relCheck() {
     realWord()
     if(isWord) {
         setColors()
-        
+        isCorrect()
     }
     else {
         goBack()
     }
 }
 function isCorrect() {
-    if((document.getElementById(`${activeRow}1`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}2`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}3`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}4`).style.backgroundColor == "green") && (document.getElementById(`${activeRow}5`).style.backgroundColor == "green")) {
+    if(inputted.join("").toLowerCase() == ans) {
         correct = true
         clutch.blur()
+        setTimeout(function() {alert(`You have found the correct word, "${ans}"`)}, 10)
+    }
+    else if(activeRow == 6) {
+        setTimeout(function() {alert(`you have failed, the correct word was "${ans}"`)}, 10)
     }
 }
 function setColors() {
@@ -61,7 +65,6 @@ function getWord() {
     for(a = 1; a <= 5; a++) {
         inputted.push(document.getElementById(`${activeRow}${a}`).innerHTML)
     }
-    console.log(inputted.join("").toLowerCase())
 }
 function realWord() {
     isWord = false
@@ -70,7 +73,6 @@ function realWord() {
             isWord = true
         }
     }
-    console.log(isWord)
 }
 function goBack() {
     alert(`The inputted word "${inputted.join("").toLowerCase()}" is not a real word`)
