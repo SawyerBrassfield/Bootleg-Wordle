@@ -10,6 +10,10 @@ var isWord
 var ans
 var b
 var correct = false
+var green = []
+var yellow = []
+var gray = []
+var c
 clutch.focus()
 getAns()
 console.log(ans)
@@ -42,20 +46,56 @@ function isCorrect() {
         setTimeout(function() {alert(`You have found the correct word, "${ans}"`)}, 10)
     }
     else if(activeRow == 6) {
-        setTimeout(function() {alert(`you have failed, the correct word was "${ans}"`)}, 10)
+        setTimeout(function() {alert(`You have failed, the correct word was "${ans}"`)}, 10)
     }
+}
+function isGreen() {
+    var yesGreen = false
+    for(c = 0; c < green.length; c++) {
+        if(green[c] == inputted[b].toLowerCase()) {
+            yesGreen = true
+        }
+    }
+    return yesGreen
+}
+function isYellow() {
+    var yesYellow = false
+    for(c = 0; c < yellow.length; c++) {
+        if(yellow[c] == inputted[b].toLowerCase()) {
+            yesYellow = true
+        }
+    }
+    return yesYellow
+}
+function isGray() {
+    var yesGray = false
+    for(c = 0; c < gray.length; c++) {
+        if(gray[c] == inputted[b].toLowerCase()) {
+            yesGray = true
+        }
+    }
+    return yesGray
 }
 function setColors() {
     for(a = 0; a < ansSplit.length; a++) {
         for(b = 0; b < inputted.length; b++) {
             if((ansSplit[a] == inputted[b].toLowerCase()) && (a == b)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "green"
+                if(isGreen() == false) {
+                    green.push(inputted[b].toLowerCase())
+                }
             }
-            else if(ansSplit[a] == inputted[b].toLowerCase()) {
+            else if((ansSplit[a] == inputted[b].toLowerCase()) && (isGreen() == false)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "yellow"
+                if(isYellow() == false) {
+                    yellow.push(inputted[b].toLowerCase())
+                }
             }
             else if((document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "yellow") && (document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "green")) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "gray"
+                if(isGray() == false) {
+                    gray.push(inputted[b].toLowerCase())
+                }
             }
         }
     }
