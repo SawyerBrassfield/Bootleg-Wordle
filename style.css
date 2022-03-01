@@ -21,7 +21,7 @@ body {
     border-color: white;
     position: relative;
     bottom: 10%;
-    left: 5%;
+    left: 25%;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66% ;
@@ -48,5 +48,41 @@ body {
 .keyboard {
     height: 25%;
     width: 40%;
-    background-color: chartreuse;
+    position: relative;
+    top: 34%;
+    right: 18%;
+}
+.kr1, .kr2, .kr3 {
+    width: 100%;
+    height: 33%;
+    background-color: black;
+    border-style: solid;
+}
+.kr1 {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 100%;
+}
+.kr2 {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 100%;
+    justify-content: center;
+}
+.kr3 {
+    display: grid;
+    grid-template-columns: 13% 10% 10% 10% 10% 10% 10% 10% 13%;
+    grid-template-rows: 100%;
+    justify-content: center;
+}
+.kr1 div, .kr2 div, .kr3 div {
+    background-color: gray;
+    border-style: solid;
+    border-color: black;
+}
+.kr1 div p, .kr2 div p, .kr3 div p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }

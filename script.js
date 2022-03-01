@@ -14,6 +14,7 @@ var green = []
 var yellow = []
 var gray = []
 var c
+var d
 clutch.focus()
 getAns()
 console.log(ans)
@@ -34,6 +35,7 @@ function relCheck() {
     if(isWord) {
         setColors()
         isCorrect()
+        keyColors()
     }
     else {
         goBack()
@@ -76,6 +78,14 @@ function isGray() {
     }
     return yesGray
 }
+function keyColors() {
+    for(d = 0; d < green.length; d++) {
+        document.getElementById(green[d]).style.backgroundColor = "green"
+    }
+    for(d = 0; d < yellow.length; d++) {
+        document.getElementById(yellow[d]).style.backgroundColor = "yellow"
+    }
+}
 function setColors() {
     for(a = 0; a < ansSplit.length; a++) {
         for(b = 0; b < inputted.length; b++) {
@@ -83,12 +93,14 @@ function setColors() {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "green"
                 if(isGreen() == false) {
                     green.push(inputted[b].toLowerCase())
+                    console.log(green)
                 }
             }
             else if((ansSplit[a] == inputted[b].toLowerCase()) && (isGreen() == false)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "yellow"
                 if(isYellow() == false) {
                     yellow.push(inputted[b].toLowerCase())
+                    console.log(yellow)
                 }
             }
             else if((document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "yellow") && (document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "green")) {
