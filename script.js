@@ -81,9 +81,11 @@ function isGray() {
 function keyColors() {
     for(d = 0; d < green.length; d++) {
         document.getElementById(green[d]).style.backgroundColor = "green"
+        document.getElementById(green[d]).children[0].style.color = "white"
     }
     for(d = 0; d < yellow.length; d++) {
         document.getElementById(yellow[d]).style.backgroundColor = "yellow"
+        document.getElementById(yellow[d]).children[0].style.color = "black"
     }
 }
 function setColors() {
@@ -94,6 +96,13 @@ function setColors() {
                 if(isGreen() == false) {
                     green.push(inputted[b].toLowerCase())
                     console.log(green)
+                }
+                if(isYellow() == true) {
+                    for(d = 0; d < yellow.length; d++) {
+                        if(yellow[d] == inputted[b].toLowerCase()) {
+                            yellow.splice(d, 1)
+                        }
+                    }
                 }
             }
             else if((ansSplit[a] == inputted[b].toLowerCase()) && (isGreen() == false)) {
@@ -130,7 +139,7 @@ function goBack() {
     alert(`The inputted word "${inputted.join("").toLowerCase()}" is not a real word`)
     activeRow--
 }
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function() {
     if(correct == false) {
         clutch.focus()
     }
