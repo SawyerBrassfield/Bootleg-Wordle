@@ -17,7 +17,6 @@ var c
 var d
 clutch.focus()
 getAns()
-console.log(ans)
 function getAns() {
     ans = ansWB[Math.floor(Math.random() * (ansWB.length - 1))]
     ansSplit = ans.split("")
@@ -87,6 +86,10 @@ function keyColors() {
         document.getElementById(yellow[d]).style.backgroundColor = "yellow"
         document.getElementById(yellow[d]).children[0].style.color = "black"
     }
+    for(d = 0; d < gray.length; d++) {
+        document.getElementById(gray[d]).style.backgroundColor = "red"
+        document.getElementById(gray[d]).children[0].style.color = "white"
+    }
 }
 function setColors() {
     for(a = 0; a < ansSplit.length; a++) {
@@ -95,7 +98,6 @@ function setColors() {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "green"
                 if(isGreen() == false) {
                     green.push(inputted[b].toLowerCase())
-                    console.log(green)
                 }
                 if(isYellow() == true) {
                     for(d = 0; d < yellow.length; d++) {
@@ -104,12 +106,25 @@ function setColors() {
                         }
                     }
                 }
+                if(isGray() == true) {
+                    for(d = 0; d < gray.length; d++) {
+                        if(gray[d] == inputted[b].toLowerCase()) {
+                            gray.splice(d, 1)
+                        }
+                    }
+                }
             }
             else if((ansSplit[a] == inputted[b].toLowerCase()) && (isGreen() == false)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "yellow"
                 if(isYellow() == false) {
                     yellow.push(inputted[b].toLowerCase())
-                    console.log(yellow)
+                }
+                if(isGray() == true) {
+                    for(d = 0; d < gray.length; d++) {
+                        if(gray[d] == inputted[b].toLowerCase()) {
+                            gray.splice(d, 1)
+                        }
+                    }
                 }
             }
             else if((document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "yellow") && (document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "green")) {
