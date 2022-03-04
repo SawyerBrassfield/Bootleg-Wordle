@@ -4,6 +4,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 .main-box {
     width: 100%;
@@ -35,7 +36,7 @@ body {
 }
 .item-text {
     color: white;
-    font-size: 60px;
+    font-size: 55px;
 }
 #clutch {
     z-index: -10;
