@@ -87,3 +87,13 @@ body {
     align-items: center;
     color: white;
 }
+.reload {
+    background-image: url(reload.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 11%;
+    width: 6%;
+    position: relative;
+    bottom: 40%;
+}

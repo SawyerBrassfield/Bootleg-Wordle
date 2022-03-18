@@ -28,6 +28,9 @@ function dispLetter() {
         activeColumn++
     }
 }
+function refresh() {
+    location.reload()
+}
 function relCheck() {
     getWord()
     realWord()
