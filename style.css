@@ -97,3 +97,34 @@ body {
     position: relative;
     bottom: 40%;
 }
+@media only screen and (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
+    .main-box {
+        width: 200%;
+    }
+    .center {
+        width: 47.5%;
+        left: 0;
+        right: 10%;
+        
+    
+    }
+    .reload {
+        display: none;
+        width: 1px;
+    }
+    #clutch {
+        width: .1px;
+    }
+    .keyboard {
+        width: 47.5%;
+        right: 49%
+    }
+
+    
+
+
+
+}

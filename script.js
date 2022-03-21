@@ -48,9 +48,11 @@ function isCorrect() {
         correct = true
         clutch.blur()
         setTimeout(function() {alert(`You have found the correct word, "${ans}"`)}, 10)
+        setTimeout(function() {location.reload()}, 3000)
     }
     else if(activeRow == 6) {
         setTimeout(function() {alert(`You have failed, the correct word was "${ans}"`)}, 10)
+        setTimeout(function() {location.reload()}, 3000)
     }
 }
 function isGreen() {
