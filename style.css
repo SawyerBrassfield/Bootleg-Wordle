@@ -97,7 +97,7 @@ body {
     position: relative;
     bottom: 40%;
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     body {
         overflow: hidden;
     }
@@ -108,8 +108,7 @@ body {
         width: 47.5%;
         left: 0;
         right: 10%;
-        
-    
+        bottom: 18%
     }
     .reload {
         display: none;
@@ -120,11 +119,7 @@ body {
     }
     .keyboard {
         width: 47.5%;
-        right: 49%
+        right: 49%;
+        top: 25%
     }
-
-    
-
-
-
 }

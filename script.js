@@ -159,6 +159,22 @@ function goBack() {
     alert(`The inputted word "${inputted.join("").toLowerCase()}" is not a real word`)
     activeRow--
 }
+function keyboardEnter() {
+    if((activeColumn == 6) && (activeRow < 7)) {
+        relCheck()
+        activeRow++
+        if(isWord) {
+            activeColumn = 1
+        }
+    }
+}
+function keyboardDel() {
+    if(activeColumn > 1) {
+        activeColumn--
+        activeItem = document.getElementById(`${activeRow}${activeColumn}`)
+        activeItem.innerHTML = ""
+    }
+}
 document.addEventListener("click", function() {
     if(correct == false) {
         clutch.focus()
