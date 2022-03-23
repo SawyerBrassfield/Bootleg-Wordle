@@ -15,7 +15,9 @@ var yellow = []
 var gray = []
 var c
 var d
-clutch.focus()
+if(screen.width > 600) {
+    clutch.focus()
+}
 getAns()
 function getAns() {
     ans = ansWB[Math.floor(Math.random() * (ansWB.length - 1))]
@@ -175,8 +177,170 @@ function keyboardDel() {
         activeItem.innerHTML = ""
     }
 }
-document.addEventListener("click", function() {
+function keyboardDisp() {
+    setTimeout(function() {
+        dispLetter()
+        clutch.value = ""
+    }, 1)
+}
+function q() {
     if(correct == false) {
+        clutch.value = "q"
+    }
+    keyboardDisp()
+}
+function w() {
+    if(correct == false) {
+        clutch.value = "w"
+    }
+    keyboardDisp()
+}
+function e() {
+    if(correct == false) {
+        clutch.value = "e"
+    }
+    keyboardDisp()
+}
+function r() {
+    if(correct == false) {
+        clutch.value = "r"
+    }
+    keyboardDisp()
+}
+function t() {
+    if(correct == false) {
+        clutch.value = "t"
+    }
+    keyboardDisp()
+}
+function y() {
+    if(correct == false) {
+        clutch.value = "y"
+    }
+    keyboardDisp()
+}
+function u() {
+    if(correct == false) {
+        clutch.value = "u"
+    }
+    keyboardDisp()
+}
+function i() {
+    if(correct == false) {
+        clutch.value = "i"
+    }
+    keyboardDisp()
+}
+function o() {
+    if(correct == false) {
+        clutch.value = "o"
+    }
+    keyboardDisp()
+}
+function p() {
+    if(correct == false) {
+        clutch.value = "p"
+    }
+    keyboardDisp()
+}
+function a() {
+    if(correct == false) {
+        clutch.value = "a"
+    }
+    keyboardDisp()
+}
+function s() {
+    if(correct == false) {
+        clutch.value = "s"
+    }
+    keyboardDisp()
+}
+function d() {
+    if(correct == false) {
+        clutch.value = "d"
+    }
+    keyboardDisp()
+}
+function f() {
+    if(correct == false) {
+        clutch.value = "f"
+    }
+    keyboardDisp()
+}
+function g() {
+    if(correct == false) {
+        clutch.value = "g"
+    }
+    keyboardDisp()
+}
+function h() {
+    if(correct == false) {
+        clutch.value = "h"
+    }
+    keyboardDisp()
+}
+function j() {
+    if(correct == false) {
+        clutch.value = "j"
+    }
+    keyboardDisp()
+}
+function k() {
+    if(correct == false) {
+        clutch.value = "k"
+    }
+    keyboardDisp()
+}
+function l() {
+    if(correct == false) {
+        clutch.value = "l"
+    }
+    keyboardDisp()
+}
+function z() {
+    if(correct == false) {
+        clutch.value = "z"
+    }
+    keyboardDisp()
+}
+function x() {
+    if(correct == false) {
+        clutch.value = "x"
+    }
+    keyboardDisp()
+}
+function c() {
+    if(correct == false) {
+        clutch.value = "c"
+    }
+    keyboardDisp()
+}
+function v() {
+    if(correct == false) {
+        clutch.value = "v"
+    }
+    keyboardDisp()
+}
+function b() {
+    if(correct == false) {
+        clutch.value = "b"
+    }
+    keyboardDisp()
+}
+function n() {
+    if(correct == false) {
+        clutch.value = "n"
+    }
+    keyboardDisp()
+}
+function m() {
+    if(correct == false) {
+        clutch.value = "m"
+    }
+    keyboardDisp()
+}
+document.addEventListener("click", function() {
+    if((correct == false) && (screen.width > 600)) {
         clutch.focus()
     }
 })

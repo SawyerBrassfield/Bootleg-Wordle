@@ -80,6 +80,7 @@ body {
     background-color: gray;
     border-style: solid;
     border-color: black;
+    cursor: pointer;
 }
 .kr1 div p, .kr2 div p, .kr3 div p {
     display: flex;
@@ -96,9 +97,10 @@ body {
     width: 6%;
     position: relative;
     bottom: 40%;
+    cursor: pointer;
 }
 @media (max-width: 600px) {
-    body {
+    html, body {
         overflow: hidden;
     }
     .main-box {
@@ -121,5 +123,8 @@ body {
         width: 47.5%;
         right: 49%;
         top: 25%
+    }
+    .kr3 {
+        grid-template-columns: 16% 10% 10% 10% 10% 10% 10% 10% 17%;
     }
 }
