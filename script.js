@@ -103,6 +103,7 @@ function setColors() {
         for(b = 0; b < inputted.length; b++) {
             if((ansSplit[a] == inputted[b].toLowerCase()) && (a == b)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "green"
+                document.getElementById(`${activeRow}${b + 1}`).style.color = "white"
                 if(isGreen() == false) {
                     green.push(inputted[b].toLowerCase())
                 }
@@ -123,6 +124,7 @@ function setColors() {
             }
             else if((ansSplit[a] == inputted[b].toLowerCase()) && (isGreen() == false)) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "yellow"
+                document.getElementById(`${activeRow}${b + 1}`).style.color = "black"
                 if(isYellow() == false) {
                     yellow.push(inputted[b].toLowerCase())
                 }
@@ -136,6 +138,7 @@ function setColors() {
             }
             else if((document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "yellow") && (document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor != "green")) {
                 document.getElementById(`${activeRow}${b + 1}`).style.backgroundColor = "gray"
+                document.getElementById(`${activeRow}${b + 1}`).style.color = "white"
                 if(isGray() == false) {
                     gray.push(inputted[b].toLowerCase())
                 }
@@ -243,7 +246,7 @@ function p() {
     }
     keyboardDisp()
 }
-function a() {
+function typeA() {
     if(correct == false) {
         clutch.value = "a"
     }
@@ -255,7 +258,7 @@ function s() {
     }
     keyboardDisp()
 }
-function d() {
+function typeD() {
     if(correct == false) {
         clutch.value = "d"
     }
@@ -309,7 +312,7 @@ function x() {
     }
     keyboardDisp()
 }
-function c() {
+function typeC() {
     if(correct == false) {
         clutch.value = "c"
     }
@@ -321,7 +324,7 @@ function v() {
     }
     keyboardDisp()
 }
-function b() {
+function typeB() {
     if(correct == false) {
         clutch.value = "b"
     }
